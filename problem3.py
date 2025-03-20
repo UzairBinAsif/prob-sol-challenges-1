@@ -8,9 +8,12 @@ Example:
 '''
 def sum_digit(n: str) -> int:
     count_sum: int = 0
-    for i in n:
-        count_sum += int(i)
-    return count_sum
+    if int(n) < 0:
+        return f'{n} must be a non-negative number'
+    else:
+        for i in n:
+            count_sum += int(i)
+        return count_sum
 
 x = input('Enter an integer: ')
 print(sum_digit(x))
